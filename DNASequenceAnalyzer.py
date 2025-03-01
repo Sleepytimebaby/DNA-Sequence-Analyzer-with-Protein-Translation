@@ -12,15 +12,7 @@ RESTRICTION_ENZYMES = {
 }
 
 def analyze_sequence(dna_seq, sequence_id):
-    """
-    Analyzes a DNA sequence and returns a dictionary of results including:
-      - Nucleotide counts
-      - GC content
-      - Reverse complement
-      - Start codon positions
-      - Restriction enzyme cut sites
-      - Protein translation (stops at the first stop codon)
-    """
+    
     # Ensure uppercase for consistency
     dna_seq = dna_seq.upper()
 
@@ -65,10 +57,7 @@ def analyze_sequence(dna_seq, sequence_id):
     return result
 
 def read_and_analyze_fasta(file_path):
-    """
-    Reads a FASTA file and analyzes each sequence.
-    Returns a list of result dictionaries.
-    """
+    
     results = []
     for record in SeqIO.parse(file_path, "fasta"):
         analysis = analyze_sequence(str(record.seq), record.id)
@@ -77,9 +66,7 @@ def read_and_analyze_fasta(file_path):
     return results
 
 def write_to_csv(results, output_csv):
-    """
-    Writes the analysis results to a CSV file.
-    """
+   
     columns = ["Sequence_ID", "Nucleotide_Counts", "GC_Content", "Reverse_Complement",
                "Start_Codon_Positions", "Cut_Sites", "Protein_Translation"]
     with open(output_csv, "w", newline="") as csvfile:

@@ -77,7 +77,7 @@ def write_to_csv(results, output_csv):
     print(f"Results written to {output_csv}")
 
 if __name__ == "__main__":
-    fasta_file = "/Users/huntereppley/Documents/Bioinformatics/coronavirus.fasta"  # Input FASTA file
+    fasta_file = "Path/To/Your/Output/File.fasta"  # Input FASTA file
     output_csv = "dna_analysis_results_with_proteins.csv"  # Output CSV file name
 
     # Analyze the sequences from the FASTA file
